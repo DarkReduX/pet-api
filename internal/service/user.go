@@ -2,8 +2,9 @@ package service
 
 import (
 	"context"
-	"petProject/internal/repository"
-	"petProject/model"
+
+	"github.com/DarkReduX/pet-api/internal/repository"
+	"github.com/DarkReduX/pet-api/model"
 
 	"github.com/google/uuid"
 )

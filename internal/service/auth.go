@@ -5,10 +5,11 @@ import (
 	"crypto/sha256"
 	"errors"
 	"fmt"
-	"petProject/internal/config"
-	"petProject/internal/repository"
-	"petProject/model"
 	"time"
+
+	"github.com/DarkReduX/pet-api/internal/config"
+	"github.com/DarkReduX/pet-api/internal/repository"
+	"github.com/DarkReduX/pet-api/model"
 
 	"github.com/golang-jwt/jwt"
 	"github.com/google/uuid"

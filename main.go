@@ -3,10 +3,11 @@ package main
 import (
 	"context"
 	"log/slog"
-	"petProject/internal/config"
-	"petProject/internal/handler"
-	"petProject/internal/repository"
-	"petProject/internal/service"
+
+	"github.com/DarkReduX/pet-api/internal/config"
+	"github.com/DarkReduX/pet-api/internal/handler"
+	"github.com/DarkReduX/pet-api/internal/repository"
+	"github.com/DarkReduX/pet-api/internal/service"
 
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/labstack/echo/v4"

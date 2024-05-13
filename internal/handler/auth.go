@@ -3,8 +3,9 @@ package handler
 import (
 	"log/slog"
 	"net/http"
-	"petProject/internal/service"
-	"petProject/model"
+
+	"github.com/DarkReduX/pet-api/internal/service"
+	"github.com/DarkReduX/pet-api/model"
 
 	"github.com/labstack/echo/v4"
 )

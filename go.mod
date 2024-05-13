@@ -1,4 +1,4 @@
-module petProject
+module github.com/DarkReduX/pet-api
 
 go 1.22.3
 

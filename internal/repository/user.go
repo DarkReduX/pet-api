@@ -2,7 +2,8 @@ package repository
 
 import (
 	"context"
-	"petProject/model"
+
+	"github.com/DarkReduX/pet-api/model"
 
 	"github.com/georgysavva/scany/v2/pgxscan"
 	"github.com/google/uuid"

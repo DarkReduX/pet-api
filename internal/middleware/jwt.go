@@ -2,8 +2,9 @@ package middleware
 
 import (
 	"net/http"
-	"petProject/model"
 	"strings"
+
+	"github.com/DarkReduX/pet-api/model"
 
 	"github.com/golang-jwt/jwt"
 	"github.com/labstack/echo/v4"
