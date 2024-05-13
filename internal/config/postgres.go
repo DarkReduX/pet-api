@@ -4,12 +4,12 @@ import (
 	"github.com/caarlos0/env"
 )
 
-type PostgreSQL struct {
+type Postgres struct {
 	URL string `env:"POSTGRES_URL" envDefault:"postgres://postgres:postgres@localhost:5432/postgres"`
 }
 
-func NewPostgreSQLEnv() (*PostgreSQL, error) {
-	cfg := &PostgreSQL{}
+func NewPostgres() (*Postgres, error) {
+	cfg := &Postgres{}
 	if err := env.Parse(cfg); err != nil {
 		return nil, err
 	}

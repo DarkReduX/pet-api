@@ -13,22 +13,26 @@ import (
 )
 
 func main() {
+	slog.Info("App start")
+
 	jwtCfg, err := config.NewJWT()
 	if err != nil {
 		slog.Error("Failed to initialize configuration: ", slog.String("error", err.Error()))
+		return
 	}
 
 	ctx := context.Background()
-	slog.Info("App start")
 
-	postgresCfg, err := config.NewPostgreSQLEnv()
+	postgresCfg, err := config.NewPostgres()
 	if err != nil {
 		slog.Error("Failed to initialize configuration: ", slog.String("error", err.Error()))
+		return
 	}
 
 	dbPool, err := pgxpool.New(ctx, postgresCfg.URL)
 	if err != nil {
 		slog.Error("Failed to connect to database: ", slog.String("error", err.Error()))
+		return
 	}
 
 	userRep := repository.NewUser(dbPool)
