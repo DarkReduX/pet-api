@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/golang-jwt/jwt"
+	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
 )
 
@@ -17,5 +17,5 @@ type JWTClaims struct {
 	GUID     uuid.UUID
 	UserUUID uuid.UUID
 
-	jwt.StandardClaims
+	jwt.RegisteredClaims
 }
