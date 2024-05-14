@@ -11,7 +11,7 @@ import (
 	"github.com/DarkReduX/pet-api/internal/repository"
 	"github.com/DarkReduX/pet-api/model"
 
-	"github.com/golang-jwt/jwt"
+	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -98,9 +98,9 @@ func (s *Auth) createToken(userUUID uuid.UUID) (string, error) {
 	at, err := jwt.NewWithClaims(jwt.SigningMethodHS512, model.JWTClaims{
 		GUID:     uuid.New(),
 		UserUUID: userUUID,
-		StandardClaims: jwt.StandardClaims{
-			IssuedAt:  time.Now().Unix(),
-			ExpiresAt: time.Now().Add(time.Minute * time.Duration(s.cfg.ExpireMinutesAT)).Unix(),
+		RegisteredClaims: jwt.RegisteredClaims{
+			IssuedAt:  jwt.NewNumericDate(time.Now()),
+			ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Minute * time.Duration(s.cfg.ExpireMinutesAT))),
 		},
 	}).SignedString([]byte(s.cfg.SigningKeyAT))
 
